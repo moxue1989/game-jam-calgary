@@ -7,9 +7,9 @@
 <audio id="coinDrop"><source src="~/Content/coinDrop.mp3" type="audio/wav" /></audio>
 <audio id="coinGet"><source src="~/Content/coinGet.mp3" type="audio/wav" /></audio>
 <audio id="door"><source src="~/Content/door.mp3" type="audio/wav" /></audio>
-<audio class="background" id="background1"><source src="~/Content/Background1.wav" type="audio/wav" /></audio>
-<audio class="background" id="background2"><source src="~/Content/Background2.wav" type="audio/wav" /></audio>
-<audio class="background" id="background3"><source src="~/Content/Background3.wav" type="audio/wav" /></audio>
+<audio class="background" id="background1" loop><source src="~/Content/Background1.wav" type="audio/wav" /></audio>
+<audio class="background" id="background2" loop><source src="~/Content/Background2.wav" type="audio/wav" /></audio>
+<audio class="background" id="background3" loop><source src="~/Content/Background3.wav" type="audio/wav" /></audio>
 <input readonly type="hidden" id="displayname" />
 
 <div class="container">
@@ -38,6 +38,7 @@
         <div class="col-md-4">
             <div>
                 <button class="btn btn-info btn-lg btn-block" id="rules" onclick="$('#alert').show()" type="button">Show Rules</button>
+                <button class="btn btn-warning btn-lg btn-block" id="playStop" onclick="playStopMusic()" type="button">Play/Pause Background Music</button>
                 <br />
                 <div style="border: solid; border-radius: 5px; border-color: black">
                     <div id="chatbox" style="height: 250px; background-color: whitesmoke; overflow: auto; word-wrap: break-word">
@@ -185,15 +186,30 @@
     <script src="~/signalr/hubs"></script>
     <script>
 
+        var isPlaying = false;
+        var audioElem;
+
         $(document).ready(function () {
             $('#message').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#send').click();
             });
 
-            $('.background').prop("volume", 0.5);
-            $('#background' + Math.floor((Math.random() * 3) + 1))[0].play();
+            $('.background').prop("volume", 0.3);
+            playStopMusic();
         });
+
+        function playStopMusic() {
+            if (!isPlaying) {
+                audioElem = $('#background' + Math.floor((Math.random() * 3) + 1))[0];
+                audioElem.play();
+                isPlaying = true;
+            } else {
+                audioElem.pause();
+                audioElem.currentTime = 0;
+                isPlaying = false;
+            }
+        }
 
         $(function () {
             // Reference the auto-generated proxy for the hub.
