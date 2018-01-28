@@ -1,0 +1,279 @@
+﻿@{
+    ViewBag.Title = "CoinClicker";
+}
+
+<head>
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css" />
+</head>
+
+<audio id="coinDrop"><source src="~/Content/coinDrop.mp3" type="audio/wav" /></audio>
+<audio id="coinGet"><source src="~/Content/coinGet.mp3" type="audio/wav" /></audio>
+<audio id="door"><source src="~/Content/door.mp3" type="audio/wav" /></audio>
+<input readonly type="hidden" id="displayname" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 style="font-size: 40px">Calgary GAME-JAM Coin Clicker</h1>
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class=col-md-2>
+        </div>
+        <div id="alert" class="alert col-md-8 alert-success">
+            <button type="button" class="close" onclick="$('#alert').hide()">&times;</button>
+            <h2 class="text-danger">Rules:</h2>
+            <p>- Everyone starts out the game with two coins.</p>
+            <p>- Click "Add Coin" to put one of your coins randomly in the grid.</p>
+            <p>- Whoever clicks a coin first will recieve two coins.</p>
+            <p>- Your score is tracked against other players.</p>
+            <p>- Have fun!</p>
+        </div>
+        <div class=col-md-2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container col-md-4">
+            <div>
+                <div style="background-color: lightgray; border: solid; border-radius: 5px; border-color: black">
+                    <h1>Current ScoreBoard:</h1>
+                    <h2 readonly id="points" class=" text-success"></h2>
+                </div>
+            </div>
+            <br />
+            <div>
+                <div style="border: solid; border-radius: 5px; border-color: black">
+                    <div id="chatbox" style="height: 250px; background-color: whitesmoke; overflow: auto; word-wrap: break-word">
+                        <span id="messages"></span>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="input-group" id="msg">
+                    <input class="form-control text-success" id="message" placeholder="Type Message Here" />
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" id="send" type="button">Send Message</button>
+                <br />
+                <button class="btn btn-success btn-lg btn-block" id="addcoin" type="button">Add Coin</button>
+                <button class="btn btn-info btn-lg btn-block" id="rules" onclick="$('#alert').show()" type="button">Show Rules</button>
+            </div>
+        </div>
+
+        <div class="container col-md-8">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="1" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="2" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="3" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="4" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="5" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="6" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="7" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="8" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="9" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="10" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="11" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="12" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="13" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="14" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="15" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="16" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="17" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="18" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="19" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="20" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="21" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="22" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="23" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="24" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="25" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="26" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="27" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="28" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="29" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="30" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="31" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="32" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="33" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="34" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="35" src="~/Content/question.gif" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img id="36" src="~/Content/question.gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(document).ready(function () {
+            $('#message').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#send').click();
+            });
+        });
+
+        $(function () {
+            // Reference the auto-generated proxy for the hub.
+            var chat = $.connection.chatHub;
+
+            var username = prompt('Enter your name:', '');
+            if (!username) {
+                username = "NewPlayer" + Math.floor((Math.random() * 100) + 1);;
+            }
+
+            $('#displayname').val(username);
+            chat.client.getCurrentCoins = function (coins) {
+                for (var i = 0; i < coins.length; i++) {
+                    $('#' + coins[i]).attr('src', '/Content/coin.gif');
+                }
+            }
+
+            chat.client.sendMessage = function (name, message) {
+                $('#messages').append('<h4 class="chat-messages"><strong class="text-warning">' +
+                    htmlEncode(name) +
+                    '</strong>: ' +
+                    htmlEncode(message) +
+                    '</h4>');
+
+                var elem = document.getElementById('chatbox');
+                elem.scrollTop = elem.scrollHeight;
+            };
+
+            chat.client.sendJoinLeaveMessage = function (message) {
+                $('#messages').append('<h4 class="chat-messages"><strong class="text-danger">' +
+                    htmlEncode(message) +
+                    '</strong></h4>');
+
+                var elem = document.getElementById('chatbox');
+                elem.scrollTop = elem.scrollHeight;
+                $('#door')[0].play();
+            };
+
+            chat.client.sendServerMessage = function (message) {
+                $('#messages').append('<h4 class="chat-messages"><strong class="text-info">' +
+                    htmlEncode(message) +
+                    '</strong></h4>');
+
+                var elem = document.getElementById('chatbox');
+                elem.scrollTop = elem.scrollHeight;
+            };
+
+            chat.client.showPoints = function (points) {
+                $('#points').html("");
+                for (var i = 0; i < points.length; i++) {
+                    $('#points').append(points[i] + "<br/>");
+                }
+            }
+
+            chat.client.addcoin = function (id) {
+                $('#' + id).attr('src', '/Content/coin.gif');
+                $('#coinDrop')[0].play();
+            }
+
+            chat.client.removecoin = function (id) {
+                $('#' + id).attr('src', '/Content/question.gif');
+                $('#coinGet')[0].play();
+            }
+
+            $.connection.hub.start().done(function () {
+                chat.server.connect($('#displayname').val());
+
+                $("img").click(function () {
+                    chat.server.getCoin($(this).attr('id'));
+                });
+
+                $("#send").click(function () {
+                    var message = $('#message').val();
+                    if (message) {
+                        chat.server.send($('#displayname').val(), message);
+                        $('#message').val('').focus();
+                    }
+                });
+
+                $("#addcoin").click(function () {
+                    chat.server.putCoin();
+                });
+            });
+        });
+
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+
+    </script>
+}
