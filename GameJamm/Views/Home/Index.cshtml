@@ -7,9 +7,9 @@
 <audio id="coinDrop"><source src="~/Content/coinDrop.mp3" type="audio/wav" /></audio>
 <audio id="coinGet"><source src="~/Content/coinGet.mp3" type="audio/wav" /></audio>
 <audio id="door"><source src="~/Content/door.mp3" type="audio/wav" /></audio>
-<audio class="background" id="background1" ><source src="~/Content/Background1.wav" type="audio/wav" /></audio>
-<audio class="background" id="background2" ><source src="~/Content/Background2.wav" type="audio/wav" /></audio>
-<audio class="background" id="background3" ><source src="~/Content/Background3.wav" type="audio/wav" /></audio>
+<audio class="background" id="background1"><source src="~/Content/Background1.wav" type="audio/wav" /></audio>
+<audio class="background" id="background2"><source src="~/Content/Background2.wav" type="audio/wav" /></audio>
+<audio class="background" id="background3"><source src="~/Content/Background3.wav" type="audio/wav" /></audio>
 <input readonly type="hidden" id="displayname" />
 
 <div class="container">
@@ -23,7 +23,7 @@
         <div class=col-md-2>
         </div>
         <div id="alert" class="alert col-md-8 alert-success">
-            <button type="button" class="close" onclick="$('#alert').hide()"></button>
+            <button type="button" class="close" value="Close" onclick="$('#alert').hide()"></button>
             <h2 class="text-danger">Rules:</h2>
             <p>- Everyone starts out the game with two coins.</p>
             <p>- Click "Add Coin" to drop one of your coins randomly in the grid.</p>
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="container col-md-4">
+        <div class="col-md-4">
             <div>
                 <div style="background-color: lightgray; border: solid; border-radius: 5px; border-color: black">
                     <h1>Current ScoreBoard:</h1>
@@ -61,114 +61,114 @@
             </div>
         </div>
 
-        <div class="container col-md-8">
+        <div class="col-md-8">
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="1" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="2" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="3" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="4" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="5" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="6" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="7" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="8" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="9" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="10" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="11" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="12" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="13" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="14" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="15" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="16" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="17" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="18" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="19" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="20" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="21" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="22" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="23" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="24" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="25" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="26" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="27" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="28" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="29" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="30" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="31" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="32" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="33" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="34" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="35" src="~/Content/question.gif" />
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <div>
                     <img id="36" src="~/Content/question.gif" />
                 </div>
             </div>
@@ -201,7 +201,7 @@
             };
 
             $('#displayname').val(username);
-            chat.client.getCurrentCoins = function(coins) {
+            chat.client.getCurrentCoins = function (coins) {
                 for (var i = 0; i < coins.length; i++) {
                     $('#' + coins[i]).attr('src', '/Content/coin.gif');
                 }
@@ -237,19 +237,19 @@
                 elem.scrollTop = elem.scrollHeight;
             };
 
-            chat.client.showPoints = function(points) {
+            chat.client.showPoints = function (points) {
                 $('#points').html("");
                 for (var i = 0; i < points.length; i++) {
                     $('#points').append(points[i] + "<br/>");
                 }
             };
 
-            chat.client.addcoin = function(id) {
+            chat.client.addcoin = function (id) {
                 $('#' + id).attr('src', '/Content/coin.gif');
                 $('#coinDrop')[0].play();
             };
 
-            chat.client.removecoin = function(id) {
+            chat.client.removecoin = function (id) {
                 $('#' + id).attr('src', '/Content/question.gif');
                 $('#coinGet')[0].play();
             };
