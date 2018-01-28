@@ -2,13 +2,14 @@
     ViewBag.Title = "CoinClicker";
 }
 
-<head>
-    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css" />
-</head>
+<link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css" />
 
 <audio id="coinDrop"><source src="~/Content/coinDrop.mp3" type="audio/wav" /></audio>
 <audio id="coinGet"><source src="~/Content/coinGet.mp3" type="audio/wav" /></audio>
 <audio id="door"><source src="~/Content/door.mp3" type="audio/wav" /></audio>
+<audio class="background" id="background1" ><source src="~/Content/Background1.wav" type="audio/wav" /></audio>
+<audio class="background" id="background2" ><source src="~/Content/Background2.wav" type="audio/wav" /></audio>
+<audio class="background" id="background3" ><source src="~/Content/Background3.wav" type="audio/wav" /></audio>
 <input readonly type="hidden" id="displayname" />
 
 <div class="container">
@@ -179,11 +180,15 @@
     <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
     <script src="~/signalr/hubs"></script>
     <script>
+
         $(document).ready(function () {
             $('#message').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#send').click();
             });
+
+            $('.background').prop("volume", 0.5);
+            $('#background' + Math.floor((Math.random() * 3) + 1))[0].play();
         });
 
         $(function () {
@@ -192,15 +197,15 @@
 
             var username = prompt('Enter your name:', '');
             if (!username) {
-                username = "NewPlayer" + Math.floor((Math.random() * 100) + 1);;
-            }
+                username = "NewPlayer" + Math.floor((Math.random() * 100) + 1);
+            };
 
             $('#displayname').val(username);
-            chat.client.getCurrentCoins = function (coins) {
+            chat.client.getCurrentCoins = function(coins) {
                 for (var i = 0; i < coins.length; i++) {
                     $('#' + coins[i]).attr('src', '/Content/coin.gif');
                 }
-            }
+            };
 
             chat.client.sendMessage = function (name, message) {
                 $('#messages').append('<h4 class="chat-messages"><strong class="text-warning">' +
@@ -232,22 +237,22 @@
                 elem.scrollTop = elem.scrollHeight;
             };
 
-            chat.client.showPoints = function (points) {
+            chat.client.showPoints = function(points) {
                 $('#points').html("");
                 for (var i = 0; i < points.length; i++) {
                     $('#points').append(points[i] + "<br/>");
                 }
-            }
+            };
 
-            chat.client.addcoin = function (id) {
+            chat.client.addcoin = function(id) {
                 $('#' + id).attr('src', '/Content/coin.gif');
                 $('#coinDrop')[0].play();
-            }
+            };
 
-            chat.client.removecoin = function (id) {
+            chat.client.removecoin = function(id) {
                 $('#' + id).attr('src', '/Content/question.gif');
                 $('#coinGet')[0].play();
-            }
+            };
 
             $.connection.hub.start().done(function () {
                 chat.server.connect($('#displayname').val());
